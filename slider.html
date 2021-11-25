@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Survey</title>
+
+
+
+   
+    <link href="slider.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="slider.min.js"></script>
+    <script src="survey.js"></script>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+
+    <style>
+        section {
+            background: #031873;
+        }
+
+
+            section > span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: sans-serif;
+                /*text-transform: uppercase;*/
+                color: #fff;
+            }
+
+        .label_name {
+            color: #fff;
+            font-size: 23px;
+            margin-bottom: 13px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input:focus {
+            border-bottom: 2px,solid #fff !important;
+            box-shadow: none !important;
+        }
+
+        input:hover {
+            border-bottom: 2px solid #10278a !important;
+        }
+
+        input {
+            background: none !important;
+            border: none !important;
+            border-bottom: 2px solid #10278a !important;
+            border-radius: 0 !important;
+            padding-left: 0 !important;
+            color: #fff;
+            font-size: 28px !important;
+            margin-left: 23px;
+            margin-bottom: 18px;
+            width: 100%;
+            padding-bottom: 17px;
+            margin-top: 14px;
+            margin-bottom: 32px;
+        }
+
+            input::placeholder {
+                color: #2640b3 !important;
+            }
+
+            input:focus {
+                box-shadow: none !important;
+            }
+
+        .next.action-button:hover {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .next.action-button {
+            background: #fff;
+            border: 2px solid #fff;
+            color: #000;
+            font-size: 19px;
+            min-width: 89px;
+            border-color: #5f77e2;
+            margin-left: 21px;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .height-100 span {
+            color: #fff;
+            padding-left: 13px;
+            /*text-transform: capitalize;*/
+            font-size: 14px !important;
+        }
+
+        .height-100 span {
+            color: #fff;
+            padding-left: 13px;
+            /*text-transform: capitalize;*/
+        }
+
+        .fixedbutton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Progress Bar*/
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background-color: white;
+            transition: all linear 0.1s;
+            min-width: 1%;
+            background-color: white;
+            z-index: 10;
+            transition: width 1s;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .height-100 > button {
+            visibility: hidden;
+        }
+
+        .height-100 > span {
+            visibility: hidden;
+        }
+
+
+
+
+
+        .fadeIn.first {
+            text-align: center;
+        }
+
+        .startNow p {
+            color: #fff;
+            font-family: Open Sans !important;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .wrapper.fadeInDown.ffs_hero.grid-full.pt7 img#icon {
+            width: 200px;
+        }
+
+        fadeIn.first {
+            text-align: center;
+        }
+
+        .wrapper.fadeInDown.ffs_hero.grid-full.pt7 {
+            background: url('images/bg-1.jpg');
+            
+            background-size: cover;
+        }
+
+        .wrapper.fadeInDown.ffs_hero.grid-full.pt7 {
+            display: flex;
+            flex-direction: row;
+            align-content: space-around;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        div#formContent h1 {
+            color: #fff;
+            font-family: roboto;
+            font-size: 53px;
+            font-weight: 500;
+            margin: 0;
+            text-align: center;
+        }
+
+        div#formContent h4 {
+            color: #fff;
+            text-align: center;
+            margin: 5px;
+            font-family: 'Roboto';
+            font-weight: 300;
+            font-size: 22px;
+        }
+
+        .startNow {
+            text-align: center;
+        }
+
+            .startNow a {
+                text-align: center;
+                background: white;
+                color: #000;
+                padding: 12px 31px;
+                display: block;
+                width: 90px;
+                margin: 0 auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-family: 'Roboto';
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 20px;
+                border: 2px solid #000;
+            }
+
+                .startNow a:hover {
+                    background: none;
+                    border-color: #fff;
+                    color: #fff;
+                }
+
+            .startNow span {
+                display: block;
+                color: #fff;
+                font-family: Open Sans !important;
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .startNow p {
+                color: #fff;
+                font-family: Open Sans !important;
+                font-size: 16px;
+                margin: 0;
+            }
+    </style>
+
+    <style>
+
+
+        .toolbtn {
+            display: inline-block;
+            padding: 3px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            /*  cursor: pointer;*/
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            /* color: #333;
+            background-color: #fff;*/
+            background: #EEEEEE;
+            color: #AF0404;
+            border-color: #ccc;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s linear 0s, opacity 300ms;
+        }
+
+            .toolbtn::before {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                margin-right: 5px;
+                content: "";
+                /*  background: url("images/warning-icon.png") no-repeat 0 4px;*/
+                background: url('/images/warning-icon.png') no-repeat 0 4px;
+                background-size: 100%;
+            }
+
+        .invalid {
+            visibility: visible !important;
+            opacity: 1;
+            transition: visibility 0s linear 0s, opacity 400ms;
+        }
+    </style>
+</head>
+<body>
+  
+
+
+   
+
+    <div id="progress" class="progress"></div>
+    <div id="startPage" class="wrapper fadeInDown ffs_hero grid-full pt7	">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+
+            <div class="fadeIn first">
+                <img src="images/ffs-logo-outline.svg" id="icon" alt="User Icon" />
+                <!--<img src="~/assets/survey/images/ffs-logo-outline.svg" id="icon" alt="User Icon" />-->
+            </div>
+
+            <h1>SHIBBOLETH GUIDE <br>PROGRAM </h1>
+            <h4>Welcome  To Shibboleth</h4>
+
+            <div class="startNow">
+                <p>Takes 7+ min</p>
+                <a id="btnStart" href="#">Start</a>
+                <span> </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="slides" class="slides" style="display:none !important;">
+        <section id="name" data-slider-index="1">
+            <span>
+                <div class="height-100">
+                    <div data-label="Name" class="label_name">1. Name * </div>
+                    <input type="text" id="1" class="form-control input required" placeholder="Type your answer here..." tooltip="This field is required." tooltip-position="bottom">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                    <div class='toolbtn'>
+                        This field is required.
+                    </div>
+                </div>
+            </span>
+        </section>
+        <section id="city" data-slider-index="2">
+            <span>
+                <div class="height-100">
+                    <div data-label="Where do you currently live?" class="label_name">2. Where do you currently live? * </div>
+                    <input type="text" id="2" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Email" data-slider-index="3">
+            <span>
+                <div class="height-100">
+                    <div data-label="Email Address" class="label_name">3. Email Address * </div>
+                    <input type="text" id="3" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Phone" data-slider-index="4">
+            <span>
+                <div class="height-100">
+                    <div data-label="Phone Number" class="label_name">4. Phone Number * </div>
+                    <input type="text" id="4" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="DOB" data-slider-index="5">
+            <span>
+                <div class="height-100">
+                    <div data-label="Date of Birth" class="label_name">5. Date of Birth * </div>
+                    <input type="text" id="5" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="SGGuide" data-slider-index="6">
+            <span>
+                <div class="height-100">
+                    <div data-label="How did you hear about the Shibboleth Guide program?" class="label_name">6. How did you hear about the Shibboleth Guide program? * </div>
+                    <input type="text" id="6" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Struggling" data-slider-index="7">
+            <span>
+                <div class="height-100">
+                    <div data-label="The Shibboleth Guide program will teach you how to lose weight, modify behaviors, improve relationshops, and even deepen your spirtual practices all while living out loud and sharing your lifestyle with others in an unashamed way.  Which of these are you most excited about and in what areas are you struggling with the most?" class="label_name">7. The Shibboleth Guide program will teach you how to lose weight, modify behaviors, improve relationshops, and even deepen your spirtual practices all while living out loud and sharing your lifestyle with others in an unashamed way.  Which of these are you most excited about and in what areas are you struggling with the most? * </div>
+                    <input type="text" id="7" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="SupportSystem" data-slider-index="8">
+            <span>
+                <div class="height-100">
+                    <div data-label="Who or What is your current support system (friends, family, mentors, etc.) and how do they inspire your growth?" class="label_name">8. Who or What is your current support system (friends, family, mentors, etc.) and how do they inspire your growth? * </div>
+                    <input type="text" id="8" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Change" data-slider-index="9">
+            <span>
+                <div class="height-100">
+                    <div data-label="How would your life be different if you were a successful and happy Shibboleth Guide? What would change as you serve more people?" class="label_name">9. How would your life be different if you were a successful and happy Shibboleth Guide? What would change as you serve more people? * </div>
+                    <input type="text" id="9" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Fear" data-slider-index="10">
+            <span>
+                <div class="height-100">
+                    <div data-label="What is your biggest fear about living on purpose as a Shibboleth Guide?" class="label_name">10. What is your biggest fear about living on purpose as a Shibboleth Guide? * </div>
+                    <input type="text" id="10" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Things" data-slider-index="11">
+            <span>
+                <div class="height-100">
+                    <div data-label="If you overcome this fear or fears, how would things be different in your life?" class="label_name">11. If you overcome this fear or fears, how would things be different in your life? * </div>
+                    <input type="text" id="11" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Inspired" data-slider-index="12">
+            <span>
+                <div class="height-100">
+                    <div data-label="What moments in your life have you felt the most inspired and alive?" class="label_name">12. What moments in your life have you felt the most inspired and alive? * </div>
+                    <input type="text" id="12" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Hurt" data-slider-index="13">
+            <span>
+                <div class="height-100" data-slider-index="14">
+                    <div data-label="What moments in your life have you felt the most hurt?" class="label_name">13. What moments in your life have you felt the most hurt? * </div>
+                    <input type="text" id="13" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Gift" data-slider-index="15">
+            <span>
+                <div class="height-100">
+                    <div data-label="What is your gift that you’d like to share with others as a Shibboleth Guide?  (Love, support, teaching, influencing, etc)" class="label_name">14. What is your gift that you’d like to share with others as a Shibboleth Guide?  (Love, support, teaching, influencing, etc) * </div>
+                    <input type="text" id="14" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="LikeDoing" data-slider-index="16">
+            <span>
+                <div class="height-100">
+                    <div data-label="What do you do for work now and in an ideal world what would you like to be doing?" class="label_name">15. What do you do for work now and in an ideal world what would you like to be doing? * </div>
+                    <input type="text" id="15" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Occupation" data-slider-index="17">
+            <span>
+                <div class="height-100">
+                    <div data-label="In an ideal world what would you life to do for a “living” or occupation?" class="label_name">16. In an ideal world what would you life to do for a “living” or occupation? * </div>
+                    <input type="text" id="16" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Vacation" data-slider-index="18">
+            <span>
+                <div class="height-100">
+                    <div data-label="Where is one place in the world you’d like to go on vacation?" class="label_name">17. Where is one place in the world you’d like to go on vacation? * </div>
+                    <input type="text" id="17" class="form-control input" placeholder="Type your answer here...">
+                    <button type="button" class="next action-button">Ok</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+        <section id="Successful">
+            <span>
+                <div class="height-100">
+                    <div data-label="How would your life be different if you had the freedom to live life as a successful Shibboleth guide?" class="label_name">18. How would your life be different if you had the freedom to live life as a successful Shibboleth guide? * </div>
+                    <input type="text" id="18" class="form-control input" placeholder="Type your answer here...">
+                    <button id="btnSubmit" type="button" class="next action-button">Submit</button> <span>press Enter ↵</span>
+                </div>
+            </span>
+        </section>
+
+
+    </div>
+
+
+
+    <div id="fixedbutton" style="display:none !important;" class="fixedbutton"><button id="btnPrevious" type="button"><i class="arrow up"></i></button><button id="btnNext" type="button"><i class="arrow down"></i></button></div>
+
+
+    <div id="thanksform" style="display:none !important;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+
+            <tr>
+                <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="900">
+                        <tr>
+                            <td bgcolor="#ffffff" align="left">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                                    <tr>
+                                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                                            <p style="margin: 0; text-align: center;">
+                                                Your application has offically been received. <br /><br />Our email is <u style="color:#03ADEC;">info@travismartin.tv</u> - Please add us to<br /> your contact list, and check your spam for our reply. You will <br />
+                                                recieve a confirmation of this application within a few minutes <br /> after submission. <br /><br />
+
+                                                We are reviewing on a rollig basis for 2021 and you will hear <br /> from us soon! In the meantime we are wishing you a beautiful, <br />loving and transformative journey until then.
+                                            </p>
+                                            <p style="    text-align: center;    font-weight: 600;    font-size: 26px;    color: #00166A;    font-family: arial;">Thanks for using our site!</p>
+                                        
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 0px 30px;">
+                                            <table border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td align="center" style="border-radius: 3px;" bgcolor="#008CCE"><a id="startSurveyAgain" href="#" target="_blank" style="font-size: 20px;    font-weight: 600; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #008CCE; display: inline-block;">Start Again </a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <script>
+      /*  var BaseHostUrl = '@ConfigurationManager.AppSettings["BaseHostUrl"].ToString()';*/
+               /* var mySlider = slider('.slides');*/
+    </script>
+    
+
+
+</body>
+</html>
