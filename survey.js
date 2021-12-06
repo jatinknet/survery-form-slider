@@ -73,7 +73,7 @@
             let surveyAnswers = {
                 SurveryQuestionId: $(this).attr('id'),
                 SurveyQuestionAnswer: $(this).val(),
-                SetId: Math.floor(Math.random() * 92233720368547), //generating random set ids
+                SetId: Math.floor(Math.random() * 345345345345), //generating random set ids
                 SurveryQuestionName: ques
             };
 
@@ -99,30 +99,6 @@
             document.getElementById("fixedbutton").style.display = 'none';
             document.getElementById("thanksform").style.display = 'block';
 
-            //$.ajax({
-            //    type: "POST",
-            //    url: BaseHostUrl + 'api/SaveSurvey/',
-            //    dataType: 'html',
-            //    data: JSON.stringify(surveyansList),
-            //    contentType: "application/json; charset=utf-8",
-            //    success: function (data) {
-              
-
-            //        document.getElementById("startPage").style.display = 'none';
-            //        document.getElementById("slides").style.display = 'none';
-            //        document.getElementById("fixedbutton").style.display = 'none';
-            //        document.getElementById("thanksform").style.display = 'block';
-               
-            //    },
-            //    failure: function (response) {
-               
-            //        alert('Fail');
-            //    },
-            //    error: function (response) {
-              
-            //        alert('Error');
-            //    }
-            //});
         }
     });
 
